@@ -2,8 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CreateBeerDTO } from '../dto/create-beer-dto';
-import { Beer } from '../model/beer';
+import { Ingredient } from '../dto/ingredient';
+import { Beer } from '../dto/beer';
 import { NetworkService } from './network.service';
+import { CreateOrderDTO } from '../dto/create-order-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -18,19 +20,32 @@ export class BeerService {
 
   getAllBeers(): Observable<Beer[]> {
     return this.http
-      .get<Beer[]>(`${this.networkService.getHost()}/v1/design`);
+      .get<Beer[]>(`${this.networkService.getHost()}/v1/beers`);
   }
 
   getBeerById(id: string): Observable<Beer> {
     return this.http
-      .get<Beer>(`${this.networkService.getHost()}/v1/design/${id}`);
+      .get<Beer>(`${this.networkService.getHost()}/v1/beers/${id}`);
   }
 
   createBeerDesign(createBeerDTO: CreateBeerDTO): Observable<void> {
     return this.http
       .post<void>(
-        `${this.networkService.getHost()}/v1/design`,
+        `${this.networkService.getHost()}/v1/beers`,
         createBeerDTO
+      );
+  }
+
+  getAllIngredients(): Observable<Ingredient[]> {
+    return this.http
+      .get<Ingredient[]>(`${this.networkService.getHost()}/v1/ingredients`);
+  }
+
+  createOrderService(createOrderDTO: CreateOrderDTO): Observable<void> {
+    return this.http
+      .post<void>(
+        `${this.networkService.getHost()}/v1/orders`,
+        createOrderDTO
       );
   }
 }

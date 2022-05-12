@@ -1,21 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DesignPageComponent } from './design-page/design-page.component';
-import { HomePageComponent } from './home-page/home-page.component';
+import { CreateBeerPageComponent } from './page/create-beer-page/create-beer-page.component';
+import { CreateOrderPageComponent } from './page/create-order-page/create-order-page.component';
+import { ShowAllBeerPageComponent } from './page/show-all-beer-page/show-all-beer-page.component';
+import { ShowBeerPageComponent } from './page/show-beer-page/show-beer-page.component';
+import { AllBeerResolver } from './resolver/all-beer.resolver';
+import { BeerResolver } from './resolver/beer.resolver';
+
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'beers',
     pathMatch: 'full'
   },
   {
-    path: 'home',
-    component: HomePageComponent
+    path: 'beers',
+    component: ShowAllBeerPageComponent,
+    resolve: AllBeerResolver
   },
   {
-    path: 'design',
-    component: DesignPageComponent
+    path: 'beers/create',
+    component: CreateBeerPageComponent
+  },
+  {
+    path: 'beers/:id',
+    component: ShowBeerPageComponent,
+    resolve: BeerResolver
+  },
+  {
+    path: 'orders/create',
+    component: CreateOrderPageComponent,
   }
 ];
 
