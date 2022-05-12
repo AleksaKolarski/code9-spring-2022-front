@@ -1,1 +1,40 @@
-<p>create-order-page works!</p>
+<mat-card>
+    <form id="create-order-form" [formGroup]="createOrderForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="name" />
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Street address</mat-label>
+            <input matInput type="text" formControlName="street" />
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>City</mat-label>
+            <input matInput type="text" formControlName="city" />
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>ZIP</mat-label>
+            <input matInput type="text" formControlName="zip" />
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Credit card number</mat-label>
+            <input matInput type="text" formControlName="creditCardNumber" />
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Credit card expiration</mat-label>
+            <input matInput type="text" formControlName="creditCardExpiration" />
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Credit card security code</mat-label>
+            <input matInput type="text" formControlName="creditCardSecurityCode" />
+        </mat-form-field>
+        <br>
+        <button mat-raised-button type="submit">Submit</button>
+    </form>
+</mat-card>

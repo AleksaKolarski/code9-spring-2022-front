@@ -9,6 +9,12 @@ import { ShowBeerPageComponent } from './page/show-beer-page/show-beer-page.comp
 import { ShowAllBeerPageComponent } from './page/show-all-beer-page/show-all-beer-page.component';
 import { CreateBeerPageComponent } from './page/create-beer-page/create-beer-page.component';
 import { CreateOrderPageComponent } from './page/create-order-page/create-order-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,13 @@ import { CreateOrderPageComponent } from './page/create-order-page/create-order-
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

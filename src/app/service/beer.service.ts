@@ -28,7 +28,7 @@ export class BeerService {
       .get<Beer>(`${this.networkService.getHost()}/v1/beers/${id}`);
   }
 
-  createBeerDesign(createBeerDTO: CreateBeerDTO): Observable<void> {
+  createBeer(createBeerDTO: CreateBeerDTO): Observable<void> {
     return this.http
       .post<void>(
         `${this.networkService.getHost()}/v1/beers`,

@@ -5,6 +5,8 @@ import { CreateOrderPageComponent } from './page/create-order-page/create-order-
 import { ShowAllBeerPageComponent } from './page/show-all-beer-page/show-all-beer-page.component';
 import { ShowBeerPageComponent } from './page/show-beer-page/show-beer-page.component';
 import { AllBeerResolver } from './resolver/all-beer.resolver';
+import { AllIngredientResolver } from './resolver/all-ingredient.resolver';
+import { BeerIdResolver } from './resolver/beer-id.resolver';
 import { BeerResolver } from './resolver/beer.resolver';
 
 
@@ -17,20 +19,30 @@ const routes: Routes = [
   {
     path: 'beers',
     component: ShowAllBeerPageComponent,
-    resolve: AllBeerResolver
+    resolve: {
+      beers: AllBeerResolver
+    }
   },
   {
     path: 'beers/create',
-    component: CreateBeerPageComponent
+    component: CreateBeerPageComponent,
+    resolve: {
+      ingredients: AllIngredientResolver
+    }
   },
+  // {
+  //   path: 'beers/:id',
+  //   component: ShowBeerPageComponent,
+  //   resolve: {
+  //     beer: BeerResolver
+  //   }
+  // },
   {
-    path: 'beers/:id',
-    component: ShowBeerPageComponent,
-    resolve: BeerResolver
-  },
-  {
-    path: 'orders/create',
+    path: 'orders/create/:beerId',
     component: CreateOrderPageComponent,
+    resolve: {
+      beerId: BeerIdResolver
+    }
   }
 ];
 

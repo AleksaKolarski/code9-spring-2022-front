@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Beer } from 'src/app/dto/beer';
 
 @Component({
   selector: 'app-show-beer-page',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowBeerPageComponent implements OnInit {
 
-  constructor() { }
+  private beer?: Beer;
+
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.beer = this.route.snapshot.data['beer'];
   }
 
 }

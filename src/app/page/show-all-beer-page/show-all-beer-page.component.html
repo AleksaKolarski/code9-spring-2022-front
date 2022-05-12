@@ -1,1 +1,6 @@
-<p>show-all-beer-page works!</p>
+<mat-card>
+    <div *ngFor="let beer of beers">
+        <span>{{beer.name}}</span>
+        <a mat-raised-button type="button" [routerLink]="['/orders/create/' + beer.id]">Order</a>
+    </div>
+</mat-card>
