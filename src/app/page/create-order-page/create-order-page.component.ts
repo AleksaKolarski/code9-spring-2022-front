@@ -17,6 +17,7 @@ export class CreateOrderPageComponent implements OnInit {
     name: [''],
     street: [''],
     city: [''],
+    state: [''],
     zip: [''],
     creditCardNumber: [''],
     creditCardExpiration: [''],

@@ -20,7 +20,7 @@ export class BeerService {
 
   getAllBeers(): Observable<Beer[]> {
     return this.http
-      .get<Beer[]>(`${this.networkService.getHost()}/beeers`);
+      .get<Beer[]>(`${this.networkService.getHost()}/beers`);
   }
 
   getBeerById(id: string): Observable<Beer> {

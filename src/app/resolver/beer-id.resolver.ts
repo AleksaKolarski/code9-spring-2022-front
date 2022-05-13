@@ -8,9 +8,9 @@ import {
 @Injectable({
   providedIn: 'root'
 })
-export class BeerIdResolver implements Resolve<String> {
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): String {
-    const beerId: string = route.params['beerId'];
+export class BeerIdResolver implements Resolve<number> {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): number {
+    const beerId: number = +route.params['beerId'];
     return beerId;
   }
 }
