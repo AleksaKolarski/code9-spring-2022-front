@@ -2,7 +2,7 @@
 export class Ingredient {
 
     constructor(
-        public id: string,
+        public id: number,
         public name: string,
     ){}
 }
