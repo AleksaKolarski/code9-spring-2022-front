@@ -20,31 +20,31 @@ export class BeerService {
 
   getAllBeers(): Observable<Beer[]> {
     return this.http
-      .get<Beer[]>(`${this.networkService.getHost()}/v1/beers`);
+      .get<Beer[]>(`${this.networkService.getHost()}/beeers`);
   }
 
   getBeerById(id: string): Observable<Beer> {
     return this.http
-      .get<Beer>(`${this.networkService.getHost()}/v1/beers/${id}`);
+      .get<Beer>(`${this.networkService.getHost()}/beers/${id}`);
   }
 
   createBeer(createBeerDTO: CreateBeerDTO): Observable<void> {
     return this.http
       .post<void>(
-        `${this.networkService.getHost()}/v1/beers`,
+        `${this.networkService.getHost()}/beers`,
         createBeerDTO
       );
   }
 
   getAllIngredients(): Observable<Ingredient[]> {
     return this.http
-      .get<Ingredient[]>(`${this.networkService.getHost()}/v1/ingredients`);
+      .get<Ingredient[]>(`${this.networkService.getHost()}/ingredients`);
   }
 
   createOrderService(createOrderDTO: CreateOrderDTO): Observable<void> {
     return this.http
       .post<void>(
-        `${this.networkService.getHost()}/v1/orders`,
+        `${this.networkService.getHost()}/orders`,
         createOrderDTO
       );
   }

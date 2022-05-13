@@ -27,12 +27,7 @@ export class CreateBeerPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.ingredients = this.route.snapshot.data['ingredients'];
-    this.ingredients = [
-      new Ingredient(12, "ing1"),
-      new Ingredient(34, "ing2"),
-      new Ingredient(56, "ing3")
-    ];
+    this.ingredients = this.route.snapshot.data['ingredients'];
   }
 
   onSubmit() {
